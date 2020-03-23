@@ -18,6 +18,7 @@ public class Client {
       public User user;
       public static ClientHelper helper;
       public static String clientRequest = "";
+      public static String clientReceivedResponse = "";
       
       
       public void startClient(String hostName, String portNumber) {
@@ -79,11 +80,15 @@ public class Client {
 	
 	public static String sendUserLogInDetails(String request, String userName, String password) {
 		
-		String userLogInRequest = request + "," +   userName + "," + password;	
+		String userLogInRequest = request + "," +   userName + "," + password;
+		
+		clientRequest = userLogInRequest;
 		
 		String serverResponse = "";
 		try {
 			serverResponse = helper.getEcho(userLogInRequest);
+			clientReceivedResponse = serverResponse;
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 	
 		} catch (SocketException e) {
 			e.printStackTrace();
@@ -127,10 +132,14 @@ public class Client {
 		
 		String createUserRequest = request + "," + userName + "," + password;
 		
+		clientRequest = createUserRequest;
+		
 		String serverResponse = "";
 		
 		try {
 			serverResponse = helper.getEcho(createUserRequest);
+			clientReceivedResponse = serverResponse;
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 		}  catch (SocketException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -155,11 +164,14 @@ public class Client {
 	public static String sendUserTMPMessage(String request, String userName, String message) {
 		
 		String sendUserTMPMessageRequest = request + "," + userName + "," + message;
+		clientRequest = sendUserTMPMessageRequest;
 		
 		String serverResponse = "";
 		
 		try {
 			serverResponse = helper.getEcho(sendUserTMPMessageRequest);
+			clientReceivedResponse = serverResponse;
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -175,11 +187,14 @@ public class Client {
 	public static String sendDownloadRequest(String request, String userName) {
 		
 		String sendUserDownloadRequest = request + "," + userName;
+		clientRequest = sendUserDownloadRequest;
 		
 		String serverResponse = "";
 		
 		try {
 			serverResponse = helper.getEcho(sendUserDownloadRequest);
+			clientReceivedResponse = serverResponse;
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -221,11 +236,14 @@ public class Client {
 	
 	public static String sendLogOffRequest(String request, String userName) {
 		String loggOfRequest = request + "," + userName;
+		clientRequest = loggOfRequest;
 		
 		String serverResponse = "";
 		
 		try {
 			serverResponse = helper.getEcho(loggOfRequest);
+			clientReceivedResponse = serverResponse;
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

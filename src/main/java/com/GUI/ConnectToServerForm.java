@@ -131,6 +131,9 @@ public class ConnectToServerForm extends JFrame {
 				LoginForm lf = new LoginForm();
 				lf.setVisible(true);
 				lf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				RequestAndResponse frame = new RequestAndResponse();
+				frame.setVisible(true);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				setVisible(false);
 				dispose();
 				c.startClient(hostName, portNumber);

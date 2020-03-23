@@ -37,7 +37,7 @@ import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Twitter extends JFrame {
+public class TwitterUploadPage extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -53,7 +53,7 @@ public class Twitter extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Twitter frame = new Twitter();
+					TwitterUploadPage frame = new TwitterUploadPage();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -65,7 +65,7 @@ public class Twitter extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Twitter() {
+	public TwitterUploadPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1329, 499);
 		contentPane = new JPanel();

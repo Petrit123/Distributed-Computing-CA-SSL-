@@ -146,7 +146,7 @@ public class LoginForm extends JFrame {
 							textField.setText("");
 							passwordField.setText("");
 						} else if (Client.isLoginRequestSuccessful(serverResponse)) {
-						Twitter frame = new Twitter();
+						TwitterUploadPage frame = new TwitterUploadPage();
 						frame.displayUserDetails(userName, Client.sessionId);	
 						frame.setVisible(true);
 						setVisible(false);
