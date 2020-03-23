@@ -1,6 +1,9 @@
 package com.Client;
 
 import java.net.*;
+
+import javax.net.ssl.SSLSocketFactory;
+
 import java.io.*;
 
 public class ClientStreamSocket {
@@ -10,7 +13,9 @@ public class ClientStreamSocket {
 	private PrintWriter output;
 
 	public ClientStreamSocket(InetAddress acceptorHost, int acceptorPort) throws SocketException, IOException {
-		socket = new Socket(acceptorHost, acceptorPort);
+		//socket = new Socket(acceptorHost, acceptorPort);
+		 System.setProperty("javax.net.ssl.trustStore", "za.store");
+		socket = ((SSLSocketFactory) SSLSocketFactory.getDefault()).createSocket(acceptorHost, acceptorPort);
 		setStreams();
 	}
 	

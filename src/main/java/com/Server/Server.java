@@ -2,6 +2,9 @@ package com.Server;
 
 import java.io.*;
 import java.net.*;
+
+import javax.net.ssl.SSLServerSocketFactory;
+
 import java.io.BufferedReader;
 
 public class Server {
@@ -12,7 +15,10 @@ public class Server {
 	public void startServer(){
 		
 		try {
-			ServerSocket myConnectionSocket = new ServerSocket(SERVER_PORT);
+			System.setProperty("javax.net.ssl.keyStore", "za.store");
+			System.setProperty("javax.net.ssl.keyStorePassword", "Hello123");
+			//ServerSocket myConnectionSocket = new ServerSocket(SERVER_PORT);
+			ServerSocket myConnectionSocket = ((SSLServerSocketFactory)SSLServerSocketFactory.getDefault()).createServerSocket(SERVER_PORT);
 			System.out.println("Server is ready for connections");
 			
 			listenForConnection();
