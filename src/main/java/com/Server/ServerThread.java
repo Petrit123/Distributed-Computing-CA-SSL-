@@ -97,7 +97,6 @@ public class ServerThread implements Runnable {
 		case "500":
 			userName = receivedMessageSplit.get(2);
 			if (downloadMessage(userName)) {
-				System.out.print("True");
 				return iProtocolResponse.succesFulDownload + " , " + downloadedMessages;
 			} else {
 				return iProtocolResponse.failedDownload;
@@ -188,9 +187,13 @@ public class ServerThread implements Runnable {
 	}
 	
 	
-	public boolean isValidUserName(String userName) {
+	public boolean isValidUserName(String userName) throws IOException {
 		
 		boolean isValidName = true;
+		
+		if (!file.exists()) {
+			file.createNewFile();
+		}
 		
 		try {
 		BufferedReader br = new BufferedReader(new FileReader("Users.txt"));
@@ -218,7 +221,7 @@ public class ServerThread implements Runnable {
 			}
 			
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("Users.txt", true), StandardCharsets.UTF_8));
-			 writer.append("\n" + userName + ": ").append(password);
+			 writer.append(userName + ": ").append(password + "\n");
 			 writer.close();
 		}  catch (FileNotFoundException e) {
 			e.printStackTrace();
