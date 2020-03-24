@@ -116,6 +116,7 @@ public class TwitterUploadPage extends JFrame {
 		JButton button_1 = new JButton("Log Off");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			        Client.sendLogOffRequest(iRequest.LOGOFF, userName);	
 					JOptionPane.showMessageDialog(null, "Goodbye " + userName, "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
 					
 					setVisible(false);

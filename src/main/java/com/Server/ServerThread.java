@@ -52,7 +52,9 @@ public class ServerThread implements Runnable {
 			    receivedMessageSplit = Arrays.asList(request.split(","));
 			    String req = receivedMessageSplit.get(0);
 			    String response = handleRequest(req);
-				myDataSocket.sendResponse(response);
+			    if (!response.equals("400")) {
+					myDataSocket.sendResponse(response);
+			    }
 			} 
 		} 
 		catch (Exception ex) {
@@ -102,11 +104,8 @@ public class ServerThread implements Runnable {
 			}
 		case "400":
 			userName = receivedMessageSplit.get(2);
-			if (isloggedOff(userName)) {
-				return iProtocolResponse.successFulLogOut + " Goodbye " + userName;
-			} else {
-				return iProtocolResponse.failedLogOut;
-			}
+			 isloggedOff(userName);
+			 break;
 		}
 		
 		return clientRequest;
@@ -272,7 +271,7 @@ public class ServerThread implements Runnable {
 		return isDownloaded;
 	}
 	
-	public boolean isloggedOff(String userName) {
+	public void isloggedOff(String userName) throws IOException{
 	    boolean isUserLoggedOff = false;	
 		try {
 			for (User loggedInUser: ServerThread.loggedInUsers) {
@@ -282,14 +281,14 @@ public class ServerThread implements Runnable {
 					break;
 				}
 			}
+			myDataSocket.sendResponse(iProtocolResponse.successFulLogOut);
 			myDataSocket.close();
-			ServerThread.sessionStarted = false;
+			//ServerThread.sessionStarted = false;
 		} catch (IOException e) {
-
+			myDataSocket.sendResponse(iProtocolResponse.failedLogOut);
 			e.printStackTrace();
 		}
 		
-		return isUserLoggedOff;
 		
 	}
 
