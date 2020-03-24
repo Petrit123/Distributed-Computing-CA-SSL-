@@ -51,7 +51,6 @@ public class ServerThread implements Runnable {
 				request = myDataSocket.receiveRequest();
 			    receivedMessageSplit = Arrays.asList(request.split(","));
 			    String req = receivedMessageSplit.get(0);
-			    ServerThread.loggedInUsers.add(trackLoggedInUser(request));
 			    String response = handleRequest(req);
 				myDataSocket.sendResponse(response);
 			} 
@@ -134,6 +133,11 @@ public class ServerThread implements Runnable {
 			} else {
 				while ((userNameInFile = br.readLine()) != null) {
 	                if (userName.equals(userNameInFile.substring(0, userNameInFile.indexOf(':'))) && password.equals(userNameInFile.substring(userNameInFile.indexOf(':') + 2))) {
+	        	    	user.setUserName(userName);
+	        	    	user.setPassWord(password);
+	        	    	user.setLoggedIn(true);
+	        	    	user.setSessionId(sessionId);
+	        	    	ServerThread.loggedInUsers.add(user);
 	                	logInResponse = iProtocolResponse.successfulLoginRequest;
 
 	                } 
@@ -147,24 +151,6 @@ public class ServerThread implements Runnable {
 		
 		return logInResponse;
 		
-	}
-	
-	public static User trackLoggedInUser(String request) {
-		List<String> receivedMessageSplit = Arrays.asList(request.split(","));
-	    String requestCode = receivedMessageSplit.get(0);
-	    User user = new User();
-	    if (requestCode.trim().equals("800")) {
-		    String userName = receivedMessageSplit.get(2);
-		    String password= receivedMessageSplit.get(3);
-	    	user.setUserName(userName);
-	    	user.setPassWord(password);
-	    	user.setLoggedIn(true);
-	    	user.setSessionId(sessionId);
-	    }
-	    
-	    return user;
-	    
-	    
 	}
 	
 	
