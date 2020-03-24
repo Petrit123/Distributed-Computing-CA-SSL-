@@ -52,7 +52,9 @@ public class ServerThread implements Runnable {
 			    receivedMessageSplit = Arrays.asList(request.split(","));
 			    String req = receivedMessageSplit.get(0);
 			    String response = handleRequest(req);
-				myDataSocket.sendResponse(response);
+			    if (!response.equals("400")) {
+					myDataSocket.sendResponse(response);
+			    }
 			} 
 		} 
 		catch (Exception ex) {
@@ -278,7 +280,6 @@ public class ServerThread implements Runnable {
 					break;
 				}
 			}
-		    myDataSocket.sendResponse(iProtocolResponse.successFulLogOut);
 			myDataSocket.close();
 		} catch (IOException e) {
 			myDataSocket.sendResponse(iProtocolResponse.failedLogOut);

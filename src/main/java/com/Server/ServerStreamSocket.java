@@ -36,7 +36,7 @@ public class ServerStreamSocket extends Socket {
 	
 	public void sendResponse(String response) throws IOException {
 		
-		//System.out.print("Server response " + response);
+		System.out.print("Server response " + response);
 		output.print(response + "\n");
 		/* The ensuing flush method call is necessary for the data to
 		 * be written to the socket data stream before the
@@ -51,7 +51,7 @@ public class ServerStreamSocket extends Socket {
 	public String receiveRequest() throws IOException {
 		// read a line from the data stream
 	    String request = input.readLine();	    
-	    //System.out.print("Server received " + request + "\n");
+	    System.out.print("Server received " + request + "\n");
 		return request;
 	} // end message
 	
