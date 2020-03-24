@@ -25,7 +25,7 @@ import com.Users.User;
 public class ServerThread implements Runnable {
 	
 	public ServerStreamSocket myDataSocket;
-	public static boolean sessionStarted = true;
+	public  boolean sessionStarted = true;
 	public static List<User> loggedInUsers = new ArrayList<User>();
 	private  List<String> receivedMessageSplit;
 	private static final int MESSAGE_LIMIT = 160;
@@ -52,9 +52,7 @@ public class ServerThread implements Runnable {
 			    receivedMessageSplit = Arrays.asList(request.split(","));
 			    String req = receivedMessageSplit.get(0);
 			    String response = handleRequest(req);
-			    if (!response.equals("400")) {
-					myDataSocket.sendResponse(response);
-			    }
+				myDataSocket.sendResponse(response);
 			} 
 		} 
 		catch (Exception ex) {
@@ -105,7 +103,6 @@ public class ServerThread implements Runnable {
 		case "400":
 			userName = receivedMessageSplit.get(2);
 			 isloggedOff(userName);
-			 break;
 		}
 		
 		return clientRequest;
@@ -281,13 +278,13 @@ public class ServerThread implements Runnable {
 					break;
 				}
 			}
-			myDataSocket.sendResponse(iProtocolResponse.successFulLogOut);
+		    myDataSocket.sendResponse(iProtocolResponse.successFulLogOut);
 			myDataSocket.close();
-			//ServerThread.sessionStarted = false;
 		} catch (IOException e) {
 			myDataSocket.sendResponse(iProtocolResponse.failedLogOut);
-			e.printStackTrace();
 		}
+		
+		sessionStarted = false;
 		
 		
 	}

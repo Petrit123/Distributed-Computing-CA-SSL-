@@ -122,6 +122,7 @@ public class TwitterUploadPage extends JFrame {
 					setVisible(false);
 					setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					dispose();
+					System.exit(0);
 
 				//	JOptionPane.showMessageDialog(null, "Sorry " + userName + " there was an error is logging you out", "ERROR", JOptionPane.ERROR_MESSAGE);
 

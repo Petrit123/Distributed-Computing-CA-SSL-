@@ -58,6 +58,7 @@ public class ServerStreamSocket extends Socket {
 
 	
 	public void close() throws IOException {
+		sendResponse(iProtocolResponse.successFulLogOut);
 		socket.close();
 	}	
 	

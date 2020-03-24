@@ -43,7 +43,7 @@ public class ClientHelper {
 	   }
 
 	   public void terminateSession() throws SocketException, IOException {
-	      mySocket.sendRequest(MESSAGE_TO_END_CONNECTION);
+	      //mySocket.sendRequest(MESSAGE_TO_END_CONNECTION);
 	      mySocket.close();
 	   } 
 	} 
