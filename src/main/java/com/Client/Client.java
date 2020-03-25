@@ -82,12 +82,13 @@ public class Client {
 		
 		String userLogInRequest = request + "," +   userName + "," + password;
 		
-		clientRequest = userLogInRequest;
+		clientRequest = request.replace(',', ' ');
 		
 		String serverResponse = "";
 		try {
 			serverResponse = helper.getEcho(userLogInRequest);
-			clientReceivedResponse = serverResponse;
+			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
+			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
 			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 	
 		} catch (SocketException e) {
@@ -132,13 +133,14 @@ public class Client {
 		
 		String createUserRequest = request + "," + userName + "," + password;
 		
-		clientRequest = createUserRequest;
+		clientRequest = request.replace(',', ' ');
 		
 		String serverResponse = "";
 		
 		try {
 			serverResponse = helper.getEcho(createUserRequest);
-			clientReceivedResponse = serverResponse;
+			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
+			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
 			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 		}  catch (SocketException e) {
 			e.printStackTrace();
@@ -164,13 +166,14 @@ public class Client {
 	public static String sendUserTMPMessage(String request, String userName, String message) {
 		
 		String sendUserTMPMessageRequest = request + "," + userName + "," + message;
-		clientRequest = sendUserTMPMessageRequest;
+		clientRequest = request.replace(',', ' ');
 		
 		String serverResponse = "";
 		
 		try {
 			serverResponse = helper.getEcho(sendUserTMPMessageRequest);
-			clientReceivedResponse = serverResponse;
+			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
+			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
 			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
@@ -187,13 +190,14 @@ public class Client {
 	public static String sendDownloadRequest(String request, String userName) {
 		
 		String sendUserDownloadRequest = request + "," + userName;
-		clientRequest = sendUserDownloadRequest;
+		clientRequest = request.replace(',', ' ');
 		
 		String serverResponse = "";
 		
 		try {
 			serverResponse = helper.getEcho(sendUserDownloadRequest);
-			clientReceivedResponse = serverResponse;
+			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
+			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
 			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -236,13 +240,14 @@ public class Client {
 	
 	public static String sendLogOffRequest(String request, String userName) {
 		String loggOfRequest = request + "," + userName;
-		clientRequest = loggOfRequest;
+		clientRequest = request.replace(' ', ' ');
 		
 		String serverResponse = "";
 		
 		try {
 			serverResponse = helper.getEcho(loggOfRequest);
-			clientReceivedResponse = serverResponse;
+			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
+			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
 			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
