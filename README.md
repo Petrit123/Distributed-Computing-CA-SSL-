@@ -8,6 +8,6 @@
 | 700 SignUp      | 701                  | Register successful.
 |       | 702                  | Register unsuccessful.
 | 600 Upload      | 601                  | Upload successful.
-|       | 602                  | Upload unsuccessful. Please login.
+|       | 602                  | Upload unsuccessful.
 | 500 Download      | 501                  | Download successful.
 |       | 502                  | Download unsuccessful.
