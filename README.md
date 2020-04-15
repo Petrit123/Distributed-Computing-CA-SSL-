@@ -10,4 +10,4 @@
 | 600 Upload      | 601                  | Upload successful.
 |       | 602                  | Upload unsuccessful. Please login.
 | 500 Download      | 501                  | Download successful.
-|       | 502                  | Download unsuccessful. Please login.
+|       | 502                  | Download unsuccessful.
