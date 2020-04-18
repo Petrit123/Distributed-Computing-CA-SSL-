@@ -2,7 +2,7 @@ package com.Protocol;
 
 public interface iProtocolResponse {
 	
-	String successfulLoginRequest = "801 SUCCESS";
+String successfulLoginRequest = "801 SUCCESS";
 	
 	String invalidUserLoginDetailsRequest = "802 DENIED";
 	
@@ -16,9 +16,9 @@ public interface iProtocolResponse {
 	
 	String failedUpload = "602 FAILED";
 	
-	String succesFulDownload = "501 SUCCESS";
+	String succesFulDownload = "501 DOWNLOAD SUCCESSFUL";
 	
-	String failedDownload = "501 FAILED";
+	String failedDownload = "501 DOWNLOAD FAILED";
 	
 	String successFulLogOut = "401 SUCCESS";
 	

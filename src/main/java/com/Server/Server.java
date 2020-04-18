@@ -2,9 +2,7 @@ package com.Server;
 
 import java.io.*;
 import java.net.*;
-
 import javax.net.ssl.SSLServerSocketFactory;
-
 import java.io.BufferedReader;
 
 public class Server {

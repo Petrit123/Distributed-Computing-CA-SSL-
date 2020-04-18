@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="341.16190476190457" y="1144.0">com.Client.Client</node>
+    <node x="1332.3772959183673" y="838.0">com.Server.ServerStreamSocket</node>
+    <node x="1283.9380102040814" y="1707.0">com.Server.Server</node>
+    <node x="1026.3772959183673" y="849.5">com.Users.User</node>
+    <node x="209.87729591836728" y="838.0">com.GUI.ConnectToServerForm</node>
+    <node x="326.5" y="583.0">com.GUI.LoginForm</node>
+    <node x="1113.8058673469386" y="1154.5">com.Server.ServerThread</node>
+    <node x="1162.7235119047618" y="518.0">com.Protocol.iProtocolResponse</node>
+    <node x="10.5" y="550.0">com.GUI.RequestAndResponse</node>
+    <node x="437.66190476190457" y="1751.5">com.Client.ClientDriver</node>
+    <node x="1350.306845238095" y="1896.0">com.Server.ServerDriver</node>
+    <node x="356.9130102040816" y="0.0">com.Protocol.iRequest</node>
+    <node x="537.5" y="849.0">com.Client.ClientHelper</node>
+    <node x="832.3772959183673" y="860.0">com.GUI.HomeScreen</node>
+    <node x="546.5" y="550.0">com.Client.ClientStreamSocket</node>
+    <node x="158.7973214285713" y="232.0">com.GUI.RegistrationForm</node>
+    <node x="529.57193877551" y="188.0">com.GUI.TwitterUploadPage</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.Server.ServerStreamSocket" target="com.Protocol.iProtocolResponse">
+      <point x="0.0" y="-103.0" />
+      <point x="1428.8772959183673" y="818.0" />
+      <point x="1378.556845238095" y="818.0" />
+      <point x="86.33333333333331" y="135.0" />
+    </edge>
+    <edge source="com.GUI.TwitterUploadPage" target="com.Client.Client">
+      <point x="93.33333333333326" y="125.0" />
+      <point x="762.9052721088433" y="498.0" />
+      <point x="805.0" y="498.0" />
+      <point x="805.0" y="1084.0" />
+      <point x="569.1619047619046" y="1084.0" />
+      <point x="60.0" y="-256.5" />
+    </edge>
+    <edge source="com.Server.ServerThread" target="com.Users.User">
+      <point x="-43.85714285714289" y="-246.0" />
+      <point x="1223.448724489796" y="1124.0" />
+      <point x="1225.8772959183673" y="1124.0" />
+      <point x="57.0" y="91.5" />
+    </edge>
+    <edge source="com.Client.Client" target="com.Client.ClientHelper">
+      <point x="12.0" y="-256.5" />
+      <point x="521.1619047619046" y="1064.0" />
+      <point x="601.75" y="1064.0" />
+      <point x="-64.25" y="92.0" />
+    </edge>
+    <edge source="com.Client.ClientHelper" target="com.Client.ClientStreamSocket">
+      <point x="-64.25" y="-92.0" />
+      <point x="601.75" y="818.0" />
+      <point x="606.25" y="818.0" />
+      <point x="-59.75" y="103.0" />
+    </edge>
+    <edge source="com.Client.Client" target="com.GUI.HomeScreen">
+      <point x="132.0" y="-256.5" />
+      <point x="641.1619047619046" y="1114.0" />
+      <point x="962.8772959183673" y="1114.0" />
+      <point x="43.5" y="81.0" />
+    </edge>
+    <edge source="com.Server.Server" target="com.Server.ServerThread">
+      <point x="-81.66666666666669" y="-69.5" />
+      <point x="1324.7713435374146" y="1682.0" />
+      <point x="1267.3058673469386" y="1682.0" />
+      <point x="0.0" y="246.0" />
+    </edge>
+    <edge source="com.Server.ServerDriver" target="com.Server.Server">
+      <point x="35.75" y="-25.0" />
+      <point x="1457.556845238095" y="1871.0" />
+      <point x="1467.6880102040814" y="1871.0" />
+      <point x="61.25" y="69.5" />
+    </edge>
+    <edge source="com.Client.Client" target="com.GUI.ConnectToServerForm">
+      <point x="-108.0" y="-256.5" />
+      <point x="401.16190476190457" y="1104.0" />
+      <point x="232.00229591836728" y="1104.0" />
+      <point x="-66.375" y="103.0" />
+    </edge>
+    <edge source="com.GUI.LoginForm" target="com.GUI.RegistrationForm">
+      <point x="-57.14285714285711" y="-70.0" />
+      <point x="369.3571428571429" y="488.0" />
+      <point x="264.2973214285713" y="488.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="com.GUI.LoginForm" target="com.GUI.TwitterUploadPage">
+      <point x="57.14285714285711" y="-70.0" />
+      <point x="483.6428571428571" y="488.0" />
+      <point x="576.2386054421768" y="488.0" />
+      <point x="-93.33333333333326" y="125.0" />
+    </edge>
+    <edge source="com.Server.ServerThread" target="com.Server.ServerStreamSocket">
+      <point x="131.57142857142856" y="-246.0" />
+      <point x="1398.8772959183673" y="1124.0" />
+      <point x="1404.7522959183673" y="1124.0" />
+      <point x="-24.125" y="103.0" />
+    </edge>
+    <edge source="com.GUI.TwitterUploadPage" target="com.Protocol.iRequest">
+      <point x="0.0" y="-125.0" />
+      <point x="669.57193877551" y="163.0" />
+      <point x="477.746343537415" y="163.0" />
+      <point x="48.33333333333337" y="69.0" />
+    </edge>
+    <edge source="com.GUI.RegistrationForm" target="com.GUI.LoginForm">
+      <point x="42.19999999999993" y="81.0" />
+      <point x="306.49732142857124" y="478.0" />
+      <point x="397.92857142857144" y="478.0" />
+      <point x="-28.571428571428555" y="-70.0" />
+    </edge>
+    <edge source="com.Client.Client" target="com.Protocol.iProtocolResponse">
+      <point x="84.0" y="-256.5" />
+      <point x="593.1619047619046" y="1094.0" />
+      <point x="821.8772959183673" y="1094.0" />
+      <point x="821.8772959183673" y="818.0" />
+      <point x="1205.8901785714284" y="818.0" />
+      <point x="-86.33333333333331" y="135.0" />
+    </edge>
+    <edge source="com.GUI.LoginForm" target="com.Protocol.iRequest">
+      <point x="28.571428571428555" y="-70.0" />
+      <point x="455.07142857142856" y="458.0" />
+      <point x="429.4130102040816" y="458.0" />
+      <point x="0.0" y="69.0" />
+    </edge>
+    <edge source="com.Server.ServerThread" target="com.Protocol.iProtocolResponse">
+      <point x="43.857142857142776" y="-246.0" />
+      <point x="1311.1630102040815" y="1124.0" />
+      <point x="1321.8772959183673" y="1124.0" />
+      <point x="1321.8772959183673" y="818.0" />
+      <point x="1292.2235119047618" y="818.0" />
+      <point x="0.0" y="135.0" />
+    </edge>
+    <edge source="com.GUI.ConnectToServerForm" target="com.GUI.RequestAndResponse">
+      <point x="-22.125" y="-103.0" />
+      <point x="276.2522959183673" y="818.0" />
+      <point x="257.16666666666674" y="818.0" />
+      <point x="98.66666666666674" y="103.0" />
+    </edge>
+    <edge source="com.GUI.RegistrationForm" target="com.Client.Client">
+      <point x="-84.39999999999998" y="81.0" />
+      <point x="179.89732142857133" y="498.0" />
+      <point x="0.0" y="498.0" />
+      <point x="0.0" y="1124.0" />
+      <point x="353.16190476190457" y="1124.0" />
+      <point x="-156.0" y="-256.5" />
+    </edge>
+    <edge source="com.Server.Server" target="com.Server.ServerStreamSocket">
+      <point x="0.0" y="-69.5" />
+      <point x="1406.4380102040814" y="1682.0" />
+      <point x="1463.8100340136052" y="1682.0" />
+      <point x="1463.8100340136052" y="1124.0" />
+      <point x="1453.0022959183673" y="1124.0" />
+      <point x="24.125" y="103.0" />
+    </edge>
+    <edge source="com.GUI.RegistrationForm" target="com.Protocol.iRequest">
+      <point x="0.0" y="-81.0" />
+      <point x="264.2973214285713" y="163.0" />
+      <point x="381.07967687074824" y="163.0" />
+      <point x="-48.33333333333337" y="69.0" />
+    </edge>
+    <edge source="com.Client.ClientDriver" target="com.Client.Client">
+      <point x="35.75" y="-25.0" />
+      <point x="544.9119047619046" y="1682.0" />
+      <point x="593.1619047619046" y="1682.0" />
+      <point x="84.0" y="256.5" />
+    </edge>
+    <edge source="com.GUI.ConnectToServerForm" target="com.Client.Client">
+      <point x="22.125" y="103.0" />
+      <point x="320.5022959183673" y="1084.0" />
+      <point x="449.16190476190457" y="1084.0" />
+      <point x="-60.0" y="-256.5" />
+    </edge>
+    <edge source="com.Client.Client" target="com.Users.User">
+      <point x="156.0" y="-256.5" />
+      <point x="665.1619047619046" y="1124.0" />
+      <point x="1054.8772959183673" y="1124.0" />
+      <point x="-114.0" y="91.5" />
+    </edge>
+    <edge source="com.GUI.LoginForm" target="com.Client.Client">
+      <point x="66.66666666666674" y="70.0" />
+      <point x="493.16666666666674" y="818.0" />
+      <point x="457.12023809523794" y="818.0" />
+      <point x="457.12023809523794" y="1064.0" />
+      <point x="497.16190476190457" y="1064.0" />
+      <point x="-12.0" y="-256.5" />
+    </edge>
+    <edge source="com.Client.Client" target="com.GUI.RequestAndResponse">
+      <point x="-132.0" y="-256.5" />
+      <point x="377.16190476190457" y="1114.0" />
+      <point x="112.24523809523794" y="1114.0" />
+      <point x="112.24523809523794" y="818.0" />
+      <point x="59.83333333333326" y="818.0" />
+      <point x="-98.66666666666674" y="103.0" />
+    </edge>
+    <edge source="com.GUI.ConnectToServerForm" target="com.GUI.LoginForm">
+      <point x="22.125" y="-103.0" />
+      <point x="320.5022959183673" y="808.0" />
+      <point x="359.83333333333337" y="808.0" />
+      <point x="-66.66666666666663" y="70.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="684.0" y="1254.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
