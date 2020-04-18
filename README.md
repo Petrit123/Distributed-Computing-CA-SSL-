@@ -4,7 +4,7 @@
 |       | 802                 | LOGIN DENIED.
 |       | 808                 | FAIELD UUSER ALREADY LOGGED IN.
 | 400 LOGOFF      | 401                  | LOGOFF SUCCESSFUL.
-|       | 402                  | Failed.
+|       | 402                  |LOGOFF Failed.
 | 700 SIGNUP      | 701                  | SIGNUP SUCCESSFUL.
 |       | 702                  | SIGNUP UNSUCCESSFUL.
 | 600 UPLOAD      | 601                  | UPLOAD SUCCESSFUL.
