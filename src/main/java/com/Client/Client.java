@@ -15,7 +15,6 @@ public class Client {
       public InputStreamReader is = new InputStreamReader(System.in);
       public BufferedReader br = new BufferedReader(is);
       public static String sessionId = "";
-      public User user;
       public static ClientHelper helper;
       public static String clientRequest = "";
       public static String clientReceivedResponse = "";
@@ -106,9 +105,9 @@ public class Client {
 		String responseMessage = receivedMessageSplit.get(1);
 		String fullResponse = responseCode + " " + responseMessage;
 		boolean isLoginRequestSuccessful = true;
-		if (fullResponse.equals(iProtocolResponse.successfulLoginRequest)) {
+		if (fullResponse.equals("801 LOGIN SUCCESSFUL")) {
 			isLoginRequestSuccessful = true;
-		} else if (fullResponse.equals(iProtocolResponse.invalidUserLoginDetailsRequest)) {
+		} else if (fullResponse.equals("802 LOGIN DENIED")) {
 			isLoginRequestSuccessful = false;
 		}
 		
@@ -121,7 +120,7 @@ public class Client {
 		String responseMessage = receivedMessageSplit.get(1);
 		String fullResponse = responseCode + " " + responseMessage;
 		boolean isLoginRequestSuccessful = true;
-		if (fullResponse.equals(iProtocolResponse.loginRequestUserAlreadyLoggedIn)) {
+		if (fullResponse.equals("808 FAILED USER ALREADY LOGGED IN")) {
 			isLoginRequestSuccessful = false;
 		}
 		
@@ -153,9 +152,9 @@ public class Client {
 	
 	public static boolean isRegistrationRequestSuccessful(String serverResponse) {
 		boolean isLoginRequestSuccessful = false;
-		if (serverResponse.equals(iProtocolResponse.successfulSignUpRequest)) {
+		if (serverResponse.equals("701 SIGNUP SUCCESSFUL")) {
 			isLoginRequestSuccessful = true;
-		} else if (serverResponse.equals(iProtocolResponse.invalidUserNameSignUpRequest)) {
+		} else if (serverResponse.equals("702 SIGNUP UNSUCCESSFUL")) {
 			isLoginRequestSuccessful = false;
 		}
 		
@@ -213,9 +212,9 @@ public class Client {
 		String responseMessage = receivedMessageSplit.get(1);
 		String fullResponse = responseCode + " " + responseMessage;
 		boolean isTMPMessageSuccessfulySent = false;
-		if (fullResponse.equals(iProtocolResponse.successFulUpload)) {
+		if (fullResponse.equals("601 UPLOAD SUCCESSFUL")) {
 			isTMPMessageSuccessfulySent = true;
-		} else if (fullResponse.equals(iProtocolResponse.failedUpload)) {
+		} else if (fullResponse.equals("602 UPLOAD UNSUCCESSFUL")) {
 			isTMPMessageSuccessfulySent = false;
 		}
 		
@@ -229,9 +228,9 @@ public class Client {
 		String fullResponse = responseCode + " " + responseMessage;
 		boolean isMessageDownloaded = false;
 		
-		if (fullResponse.equals(iProtocolResponse.succesFulDownload)) {
+		if (fullResponse.equals("501 DOWNLOAD SUCCESSFUL")) {
 			isMessageDownloaded = true;
-		} else if (fullResponse.equals(iProtocolResponse.failedDownload)) {
+		} else if (fullResponse.equals("501 DOWNLOAD UNSUCCESSFUL")) {
 			isMessageDownloaded = false;
 		}
 		

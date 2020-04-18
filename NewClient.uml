@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="0.0">com.Client.Client</node>
+    <node x="654.0" y="787.0">com.Client.ClientDriver</node>
+    <node x="284.0" y="536.0">com.GUI.ConnectToServerForm</node>
+    <node x="464.0" y="787.0">com.Protocol.iRequest</node>
+    <node x="506.0" y="536.0">com.Client.ClientHelper</node>
+    <node x="219.0" y="787.0">com.GUI.LoginForm</node>
+    <node x="0.0" y="787.0">com.GUI.HomeScreen</node>
+    <node x="706.0" y="0.0">com.GUI.RequestAndResponse</node>
+    <node x="808.0" y="536.0">com.GUI.RegistrationForm</node>
+    <node x="0.0" y="536.0">com.Client.ClientStreamSocket</node>
+    <node x="381.0" y="0.0">com.GUI.TwitterUploadPage</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="538.0" y="370.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
