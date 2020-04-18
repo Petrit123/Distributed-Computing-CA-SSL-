@@ -2,7 +2,7 @@
 | -------------- |:-------------------- |:-----------------------
 | 800 LOGIN      | 801                  | LOGIN SUCCESSFUL.
 |       | 802                 | LOGIN DENIED.
-|       | 808                 | FAIELD UUSER ALREADY LOGGED IN.
+|       | 808                 | FAILED UUSER ALREADY LOGGED IN.
 | 400 LOGOFF      | 401                  | LOGOFF SUCCESSFUL.
 |       | 402                  |LOGOFF Failed.
 | 700 SIGNUP      | 701                  | SIGNUP SUCCESSFUL.
