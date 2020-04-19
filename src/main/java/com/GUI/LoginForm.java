@@ -140,7 +140,7 @@ public class LoginForm extends JFrame {
 					String password = passwordField.getText();
 					String serverResponse = Client.sendUserLogInDetails(iRequest.LOGIN , userName, password);
 					List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
-					Client.sessionId = receivedMessageSplit.get(2);
+					Client.sessionId = receivedMessageSplit.get(3);
 					 if (!Client.checkIfUserIsLoggedIn(serverResponse)) {
 							JOptionPane.showMessageDialog(null, "User is already logged in", "Failure", JOptionPane.ERROR_MESSAGE);
 							textField.setText("");

@@ -96,6 +96,9 @@ public class TwitterUploadPage extends JFrame {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if (textField.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Blank field", "Error",JOptionPane.ERROR_MESSAGE);
+				} else {
 				String serverResponse = Client.sendUserTMPMessage(iRequest.UPLOAD, userName, textField.getText());
 				List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(","));
 				String message = receivedMessageSplit.get(1);
@@ -110,6 +113,7 @@ public class TwitterUploadPage extends JFrame {
 				}
 				appendToPane(textPane, "\n\t\t\t\t\t\t " + timeStamp, Color.BLUE);
 				appendToPane(textPane, "\n###############################################################################################", Color.GRAY);
+				}
 			}
 		});
 		

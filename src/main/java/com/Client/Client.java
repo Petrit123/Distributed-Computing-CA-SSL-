@@ -102,7 +102,7 @@ public class Client {
 	public static boolean isLoginRequestSuccessful(String serverResponse) {
 		List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
 		String responseCode = receivedMessageSplit.get(0);
-		String responseMessage = receivedMessageSplit.get(1);
+		String responseMessage = receivedMessageSplit.get(1) + " " + receivedMessageSplit.get(2);
 		String fullResponse = responseCode + " " + responseMessage;
 		boolean isLoginRequestSuccessful = true;
 		if (fullResponse.equals("801 LOGIN SUCCESSFUL")) {
@@ -115,16 +115,20 @@ public class Client {
 	}
 	
 	public static boolean checkIfUserIsLoggedIn(String serverResponse) {
-		List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
-		String responseCode = receivedMessageSplit.get(0);
-		String responseMessage = receivedMessageSplit.get(1);
-		String fullResponse = responseCode + " " + responseMessage;
 		boolean isLoginRequestSuccessful = true;
-		if (fullResponse.equals("808 FAILED USER ALREADY LOGGED IN")) {
-			isLoginRequestSuccessful = false;
+		if (serverResponse.length() > 22) {
+			
+			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
+			String responseCode = receivedMessageSplit.get(0);
+			String responseMessage = receivedMessageSplit.get(1) + " " + receivedMessageSplit.get(2) + " " + receivedMessageSplit.get(3) + " " + receivedMessageSplit.get(4) + " " + receivedMessageSplit.get(5);
+			String fullResponse = responseCode + " " + responseMessage;
+			if (fullResponse.equals("808 FAILED USER ALREADY LOGGED IN")) {
+				isLoginRequestSuccessful = false;
+			}
 		}
-		
-		return isLoginRequestSuccessful;
+			
+			return isLoginRequestSuccessful;
+			
 	}
 	
 	
@@ -209,7 +213,7 @@ public class Client {
 	public static boolean isTMPMessageSuccessfulySent(String serverResponse) {
 		List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
 		String responseCode = receivedMessageSplit.get(0);
-		String responseMessage = receivedMessageSplit.get(1);
+		String responseMessage = receivedMessageSplit.get(1)  + " " + receivedMessageSplit.get(2);
 		String fullResponse = responseCode + " " + responseMessage;
 		boolean isTMPMessageSuccessfulySent = false;
 		if (fullResponse.equals("601 UPLOAD SUCCESSFUL")) {
@@ -224,7 +228,7 @@ public class Client {
 	public static boolean isTMPMessageDownloaded(String serverResponse) {
 		List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
 		String responseCode = receivedMessageSplit.get(0);
-		String responseMessage = receivedMessageSplit.get(1);
+		String responseMessage = receivedMessageSplit.get(1)  + " " + receivedMessageSplit.get(2);
 		String fullResponse = responseCode + " " + responseMessage;
 		boolean isMessageDownloaded = false;
 		
