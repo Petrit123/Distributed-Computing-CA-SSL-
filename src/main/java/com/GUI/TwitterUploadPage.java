@@ -113,6 +113,7 @@ public class TwitterUploadPage extends JFrame {
 				}
 				appendToPane(textPane, "\n\t\t\t\t\t\t " + timeStamp, Color.BLUE);
 				appendToPane(textPane, "\n###############################################################################################", Color.GRAY);
+				textField.setText("");
 				}
 			}
 		});

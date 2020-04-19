@@ -88,7 +88,7 @@ public class Client {
 			serverResponse = helper.getEcho(userLogInRequest);
 			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
 			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
-			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, serverResponse);
 	
 		} catch (SocketException e) {
 			e.printStackTrace();
@@ -144,7 +144,7 @@ public class Client {
 			serverResponse = helper.getEcho(createUserRequest);
 			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
 			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
-			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, serverResponse);
 		}  catch (SocketException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -177,7 +177,7 @@ public class Client {
 			serverResponse = helper.getEcho(sendUserTMPMessageRequest);
 			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
 			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
-			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, serverResponse);
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -201,7 +201,7 @@ public class Client {
 			serverResponse = helper.getEcho(sendUserDownloadRequest);
 			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
 			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
-			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, serverResponse);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -251,7 +251,7 @@ public class Client {
 			serverResponse = helper.getEcho(loggOfRequest);
 			List<String> receivedMessageSplit = Arrays.asList(serverResponse.split(" "));
 			clientReceivedResponse = receivedMessageSplit.get(0) + " " + receivedMessageSplit.get(1);
-			RequestAndResponse.receiveRequestAndResponse(clientRequest, clientReceivedResponse);
+			RequestAndResponse.receiveRequestAndResponse(clientRequest, serverResponse);
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
